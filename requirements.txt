@@ -6,6 +6,7 @@ charset-normalizer==3.4.1
 colorama==0.4.6
 decorator==5.2.1
 Django==5.2
+django-jazzmin==3.0.1
 djangorestframework==3.16.0
 djangorestframework_simplejwt==5.4.0
 drf-yasg==1.21.10
