@@ -39,6 +39,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'learning-management-systems-4.onrender.com',
+    'localhost',
+    '127.0.0.1'
 ]
 
 
