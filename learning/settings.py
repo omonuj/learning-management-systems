@@ -38,7 +38,8 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'learning-management-systems-6.onrender.com',
+    'learning-management-systems-10.onrender.com',
+
     '127.0.0.1',
     'localhost'
 ]
