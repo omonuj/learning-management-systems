@@ -47,3 +47,5 @@ tzdata==2025.2
 uritemplate==4.1.1
 urllib3==2.4.0
 xmod==1.8.1
+django-cors-headers
+
