@@ -90,9 +90,9 @@ class Courses(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        if self.slug == "" or self.slug is None:
+        if not self.slug:
             self.slug = slugify(self.title)
-        super(Category).save()
+        super().save(*args, **kwargs)
 
     def student(self):
         from certificates.models import EnrolledCourse
