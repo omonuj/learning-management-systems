@@ -1,0 +1,12 @@
+# Tell GitHub Linguist this is a Python project and to ignore generated/vendored
+# assets when computing the repository's language breakdown.
+
+staticfiles/**  linguist-generated=true
+staticfiles/**  linguist-vendored=true
+media/**        linguist-vendored=true
+
+*.js  linguist-vendored=true
+*.css linguist-vendored=true
+
+# Force-classify the repository as Python
+*.py  linguist-detectable=true
