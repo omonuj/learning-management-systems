@@ -1,0 +1,74 @@
+name: CD
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: cd-main
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build & collect static
+    runs-on: ubuntu-latest
+    env:
+      SECRET_KEY: ci-insecure-build-key-not-for-production
+      DEBUG: "False"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Collect static files
+        run: python manage.py collectstatic --noinput
+
+      - name: Upload static artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: staticfiles
+          path: staticfiles/
+          retention-days: 7
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+
+      # --- Deployment scaffold ---------------------------------------------
+      # Fill in for your host (Render / Railway / Fly.io / VPS + gunicorn).
+      # Kept as a documented no-op so the pipeline is green until wired up.
+      #
+      # Example (SSH + gunicorn restart):
+      #   - uses: appleboy/ssh-action@v1
+      #     with:
+      #       host: ${{ secrets.DEPLOY_HOST }}
+      #       username: ${{ secrets.DEPLOY_USER }}
+      #       key: ${{ secrets.DEPLOY_SSH_KEY }}
+      #       script: |
+      #         cd /srv/lms
+      #         git pull --ff-only
+      #         source .venv/bin/activate
+      #         pip install -r requirements.txt
+      #         python manage.py migrate --noinput
+      #         python manage.py collectstatic --noinput
+      #         sudo systemctl restart gunicorn
+      #
+      # Example (Render deploy hook):
+      #   - run: curl -fsSL -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
+      # ----------------------------------------------------------------------
+      - name: Deploy placeholder
+        run: echo "No deploy target configured yet. Add secrets and uncomment a strategy above."
