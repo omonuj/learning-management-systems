@@ -1,0 +1,4 @@
+venv
+manage.py
+.env
+.idea
