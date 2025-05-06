@@ -9,8 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
-
+import sys
 from pathlib import Path
 import os
 from pathlib import Path
@@ -38,7 +37,9 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'learning-management-systems-4.onrender.com',
+]
 
 
 # Application definition
@@ -173,11 +174,15 @@ REST_FRAMEWORK = {
     ),
 }
 
+try:
+    STRIPE_SECRET_KEY = env("STRIPE_SECRET_KEY")
+    STRIPE_PUBLISHABLE_KEY = env("STRIPE_PUBLISHABLE_KEY")
+    PAYPAL_CLIENT_ID = env("PAYPAL_CLIENT_ID") # PAYPAL_CLIENT_ID=9-320034750834758934758347
+    PAYPAL_SECRET_ID = env("PAYPAL_SECRET_ID")
 
-STRIPE_SECRET_KEY = env("STRIPE_SECRET_KEY")
-STRIPE_PUBLISHABLE_KEY = env("STRIPE_PUBLISHABLE_KEY")
-PAYPAL_CLIENT_ID = env("PAYPAL_CLIENT_ID") # PAYPAL_CLIENT_ID=9-320034750834758934758347
-PAYPAL_SECRET_ID = env("PAYPAL_SECRET_ID")
+except Exception as e:
+    print("Environment variable missing:", e)
+    sys.exit(1)
 
 
 FRONTEND_SITE_URL = env("FRONTEND_SITE_URL")
