@@ -74,7 +74,7 @@ INSTALLED_APPS = [
 
 CORS_ALLOWED_ORIGINS = [
     'https://learning-management-systems-10.onrender.com',
-    'https://learn-now-gamma.vercel.app/',
+    'https://learn-now-gamma.vercel.app',
     'http://localhost:5173'
 ]
 
