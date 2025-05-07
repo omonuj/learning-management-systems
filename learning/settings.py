@@ -187,6 +187,16 @@ REST_FRAMEWORK = {
     ),
 }
 
+
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),   # How long access token is valid
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),     # How long refresh token is valid
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True,
+    'AUTH_HEADER_TYPES': ('Bearer',),
+}
+
 try:
     STRIPE_SECRET_KEY = env("STRIPE_SECRET_KEY")
     STRIPE_PUBLISHABLE_KEY = env("STRIPE_PUBLISHABLE_KEY")

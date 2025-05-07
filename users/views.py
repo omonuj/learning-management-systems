@@ -3,8 +3,9 @@ from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework_simplejwt.views import TokenObtainPairView
 
-from users.serializers import RegisterSerializer, UserSerializer, UserProfileSerializer
+from users.serializers import RegisterSerializer, UserSerializer, UserProfileSerializer, MyTokenObtainPairSerializer
 
 
 # Class-Based View version of the home endpoint
@@ -30,18 +31,22 @@ class RegisterView(APIView):
 
 
 # Login User - POST /api/login/
-class CustomTokenObtainPairView(APIView):
-    def post(self, request):
-        email = request.data.get('email')
-        password = request.data.get('password')
+# class CustomTokenObtainPairView(APIView):
+#     def post(self, request):
+#         email = request.data.get('email')
+#         password = request.data.get('password')
+#
+#         user = authenticate(request, email=email, password=password)
+#         if user is not None:
+#             login(request, user)
+#             return Response({'detail:' 'Login Successfully.'}, status=status.HTTP_200_OK)
+#         else:
+#             return Response({'detail:' 'Invalid Credentials.'}, status=status.HTTP_404_NOT_FOUND)
 
-        user = authenticate(request, email=email, password=password)
-        if user is not None:
-            login(request, user)
-            return Response({'detail:' 'Login Successfully.'}, status=status.HTTP_200_OK)
-        else:
-            return Response({'detail:' 'Invalid Credentials.'}, status=status.HTTP_404_NOT_FOUND)
 
+
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class = MyTokenObtainPairSerializer
 
 # Retrieve User Profile - GET /api/profile/
 class UserProfileView(APIView):
