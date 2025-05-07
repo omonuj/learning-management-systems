@@ -7,6 +7,7 @@
     <list default="true" id="0102901f-d69e-471e-a2f8-56af1c041fd6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/learning/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/learning/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +120,7 @@
       <updated>1746223270941</updated>
       <workItem from="1746223276303" duration="6324000" />
       <workItem from="1746229745428" duration="5763000" />
-      <workItem from="1746287067864" duration="23678000" />
+      <workItem from="1746287067864" duration="25653000" />
     </task>
     <servers />
   </component>
