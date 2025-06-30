@@ -6,6 +6,8 @@
 
 Teachers publish paid courses, students browse, buy, enrol, learn, and earn certificates — all through a clean, documented, JWT-secured REST API.
 
+[![CI](https://github.com/omonuj/learning-management-systems/actions/workflows/ci.yml/badge.svg)](https://github.com/omonuj/learning-management-systems/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/omonuj/learning-management-systems/actions/workflows/codeql.yml/badge.svg)](https://github.com/omonuj/learning-management-systems/actions/workflows/codeql.yml)
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Django](https://img.shields.io/badge/Django-5.2-092E20?logo=django&logoColor=white)](https://www.djangoproject.com/)
 [![DRF](https://img.shields.io/badge/DRF-3.16-A30000?logo=django&logoColor=white)](https://www.django-rest-framework.org/)
