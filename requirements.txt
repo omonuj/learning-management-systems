@@ -1,4 +1,4 @@
-﻿asgiref==3.8.1
+asgiref==3.8.1
 attrs==25.3.0
 backports-datetime-fromisoformat==2.0.3
 certifi==2025.4.26
@@ -24,7 +24,7 @@ moviepy==2.1.2
 numpy==1.26.4
 packaging==25.0
 pillow==10.4.0
-proglog==0.1.11
+proglog==0.1.12
 psycopg2-binary==2.9.10
 PyJWT==2.10.1
 python-dateutil==2.9.0.post0
