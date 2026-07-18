@@ -17,7 +17,7 @@ jobs:
       SECRET_KEY: ci-insecure-build-key-not-for-production
       DEBUG: "False"
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # --- Deployment scaffold ---------------------------------------------
       # Fill in for your host (Render / Railway / Fly.io / VPS + gunicorn).
